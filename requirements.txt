@@ -1,0 +1,6 @@
+requests==2.32.3
+pytest==8.3.3
+pytest-xdist==3.6.1          # parallel execution (equivalent of TestNG parallel="methods")
+allure-pytest==2.13.5        # Allure reporting
+Faker==29.0.0                # randomised test data (equivalent of JavaFaker)
+python-dotenv==1.0.1         # optional .env override support
