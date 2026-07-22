@@ -27,6 +27,7 @@ class ConfigManager:
         defaults = parser["DEFAULT"] if "DEFAULT" in parser else {}
 
         self.base_url = os.getenv("BASE_URL", defaults.get("base_url", ""))
+        self.base_path = self.base_url
         self.api_version = os.getenv("API_VERSION", defaults.get("api_version", "v1"))
         self.timeout_seconds = int(
             os.getenv("TIMEOUT_SECONDS", defaults.get("timeout_seconds", "3"))
