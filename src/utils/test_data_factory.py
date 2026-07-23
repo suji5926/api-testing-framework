@@ -46,20 +46,19 @@ def empty_payload() -> dict:
 # ── Auth payloads ────────────────────────────────────────────────────────────
 
 def valid_credentials() -> LoginRequest:
-    return LoginRequest(username="admin", password="password123")
+    return LoginRequest(email="eve.holt@reqres.in", password="cityslicka")
 
 
 def invalid_credentials() -> LoginRequest:
-    return LoginRequest(username=faker.user_name(), password=faker.password())
+    return LoginRequest(email=faker.email(), password=faker.password())
 
 
 def missing_password() -> LoginRequest:
-    return LoginRequest(username=faker.user_name(), password=None)
+    return LoginRequest(email="eve.holt@reqres.in", password=None)
 
 
 def missing_username() -> LoginRequest:
-    return LoginRequest(username=None, password=faker.password())
-
+    return LoginRequest(email=None, password="cityslicka")
 
 # ── Generic helpers ─────────────────────────────────────────────────────────
 
