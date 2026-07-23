@@ -9,7 +9,7 @@ from typing import Optional
 
 @dataclass
 class LoginRequest:
-    username: Optional[str] = None
+    email: Optional[str] = None
     password: Optional[str] = None
 
     def to_json(self) -> dict:
