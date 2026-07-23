@@ -43,9 +43,9 @@ def request_spec():
     session.headers.update({
         "Content-Type": "application/json",
         "Accept": "application/json",
+        "x-api-key": config.api_key,
     })
     return session
-
 
 @pytest.fixture(scope="session")
 def auth_admin_spec():
@@ -54,17 +54,17 @@ def auth_admin_spec():
         "Content-Type": "application/json",
         "Accept": "application/json",
         "Authorization": f"Bearer {config.admin_token}",
+        "x-api-key": config.api_key,
     })
     return session
 
-
 @pytest.fixture(scope="session")
-def auth_user_spec():
-    session = requests.Session()
+def auth_user_spec(): 
     session.headers.update({
         "Content-Type": "application/json",
         "Accept": "application/json",
         "Authorization": f"Bearer {config.user_token}",
+        "x-api-key": config.api_key,
     })
     return session
 
@@ -76,6 +76,7 @@ def no_auth_spec():
     session.headers.update({
         "Content-Type": "application/json",
         "Accept": "application/json",
+        "x-api-key": config.api_key,
     })
     return session
 
