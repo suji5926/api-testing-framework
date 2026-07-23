@@ -36,17 +36,19 @@ class ConfigManager:
         self.environment = os.getenv("ENVIRONMENT", defaults.get("environment", "qa"))
 
         self.auth_admin_token = os.getenv(
-        self.admin_token = self.auth_admin_token
             "AUTH_ADMIN_TOKEN", defaults.get("auth_admin_token", "")
         )
+        self.admin_token = self.auth_admin_token
+
         self.auth_user_token = os.getenv(
-        self.user_token = self.auth_user_token
             "AUTH_USER_TOKEN", defaults.get("auth_user_token", "")
         )
+        self.user_token = self.auth_user_token
+
         self.auth_invalid_token = os.getenv(
-        self.invalid_token = self.auth_invalid_token
             "AUTH_INVALID_TOKEN", defaults.get("auth_invalid_token", "invalid.token.value")
         )
+        self.invalid_token = self.auth_invalid_token
 
 
 # Singleton instance used across the framework
